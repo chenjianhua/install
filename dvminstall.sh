@@ -99,7 +99,7 @@ fi
 
 echo "[1/3] Download ${asset_uri} to ${downloadFolder}"
 rm -f ${downloaded_file}
-curl --fail --location --output "${downloaded_file}" "${asset_uri}"
+curl --socks5 127.0.0.1:1099 --fail --location --output "${downloaded_file}" "${asset_uri}"
 
 echo "[2/3] Install ${exe_name} to the ${executable_folder}"
 tar -xz -f ${downloaded_file} -C ${executable_folder}
